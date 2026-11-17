@@ -1,0 +1,269 @@
+/* Test 1: sum
+input
+    5
+    1 2 3 4 5
+    0
+    0
+output
+    Input n: Input n elements: The array is: 1 2 3 4 5 
+    The sum of the array is: 15
+    The max value of the array is: 5
+    The array after deleting the max value is: 1 2 3 4 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 1 2 3 4 
+    The array after reversing is: 4 3 2 1 0 
+*/
+
+/* Test 2: sum, negatives
+input
+    3
+    -1 -2 -3
+    0
+    0
+output
+    Input n: Input n elements: The array is: -1 -2 -3 
+    The sum of the array is: -6
+    The max value of the array is: -1
+    The array after deleting the max value is: -2 -3 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 -2 -3 
+    The array after reversing is: -3 -2 0 
+*/
+
+/* Test 3: sum, one element
+input
+    1
+    7
+    0
+    0
+output
+    Input n: Input n elements: The array is: 7 
+    The sum of the array is: 7
+    The max value of the array is: 7
+    The array after deleting the max value is: 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 
+    The array after reversing is: 0 
+*/
+
+/* Test 4: max
+input
+    4
+    3 9 2 5
+    0
+    0
+output
+    Input n: Input n elements: The array is: 3 9 2 5 
+    The sum of the array is: 19
+    The max value of the array is: 9
+    The array after deleting the max value is: 3 2 5 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 3 2 5 
+    The array after reversing is: 5 2 3 0 
+*/
+
+/* Test 5: max, all negative
+input
+    3
+    -5 -3 -9
+    0
+    0
+output
+    Input n: Input n elements: The array is: -5 -3 -9 
+    The sum of the array is: -17
+    The max value of the array is: -3
+    The array after deleting the max value is: -5 -9 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 -5 -9 
+    The array after reversing is: -9 -5 0 
+*/
+
+/* Test 6: max, all equal
+input
+    4
+    7 7 7 7
+    0
+    0
+output
+    Input n: Input n elements: The array is: 7 7 7 7 
+    The sum of the array is: 28
+    The max value of the array is: 7
+    The array after deleting the max value is: 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 
+    The array after reversing is: 0 
+*/
+
+/* Test 7: delete max
+input
+    5
+    3 -1 4 1 5
+    0
+    0
+output
+    Input n: Input n elements: The array is: 3 -1 4 1 5 
+    The sum of the array is: 12
+    The max value of the array is: 5
+    The array after deleting the max value is: 3 -1 4 1 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 3 -1 4 1 
+    The array after reversing is: 1 4 -1 3 0 
+*/
+
+/* Test 8: delete max, duplicated
+input
+    5
+    2 9 1 9 3
+    0
+    0
+output
+    Input n: Input n elements: The array is: 2 9 1 9 3 
+    The sum of the array is: 24
+    The max value of the array is: 9
+    The array after deleting the max value is: 2 1 3 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 2 1 3 
+    The array after reversing is: 3 1 2 0 
+*/
+
+/* Test 9: delete max, becomes empty
+input
+    1
+    8
+    0
+    0
+output
+    Input n: Input n elements: The array is: 8 
+    The sum of the array is: 8
+    The max value of the array is: 8
+    The array after deleting the max value is: 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 
+    The array after reversing is: 0 
+*/
+
+/* Test 10: insert at beginning
+input
+    3
+    10 20 30
+    0
+    5
+output
+    Input n: Input n elements: The array is: 10 20 30 
+    The sum of the array is: 60
+    The max value of the array is: 30
+    The array after deleting the max value is: 10 20 
+    Input the inserted position: Input the inserted value: The array after inserting is: 5 10 20 
+    The array after reversing is: 20 10 5 
+*/
+
+/* Test 11: insert in middle
+input
+    3
+    10 20 30
+    1
+    5
+output
+    Input n: Input n elements: The array is: 10 20 30 
+    The sum of the array is: 60
+    The max value of the array is: 30
+    The array after deleting the max value is: 10 20 
+    Input the inserted position: Input the inserted value: The array after inserting is: 10 5 20 
+    The array after reversing is: 20 5 10 
+*/
+
+/* Test 12: insert at end
+input
+    3
+    10 20 30
+    2
+    5
+output
+    Input n: Input n elements: The array is: 10 20 30 
+    The sum of the array is: 60
+    The max value of the array is: 30
+    The array after deleting the max value is: 10 20 
+    Input the inserted position: Input the inserted value: The array after inserting is: 10 20 5 
+    The array after reversing is: 5 20 10 
+*/
+
+/* Test 13: invalid position, negative
+input
+    3
+    10 20 30
+    -1
+    5
+output
+    Input n: Input n elements: The array is: 10 20 30 
+    The sum of the array is: 60
+    The max value of the array is: 30
+    The array after deleting the max value is: 10 20 
+    Input the inserted position: Input the inserted value: Invalid position!
+    The array after reversing is: 20 10 
+*/
+
+/* Test 14: invalid position, n+1
+input
+    3
+    10 20 30
+    3
+    5
+output
+    Input n: Input n elements: The array is: 10 20 30 
+    The sum of the array is: 60
+    The max value of the array is: 30
+    The array after deleting the max value is: 10 20 
+    Input the inserted position: Input the inserted value: Invalid position!
+    The array after reversing is: 20 10 
+*/
+
+/* Test 15: invalid position, large
+input
+    3
+    10 20 30
+    9
+    5
+output
+    Input n: Input n elements: The array is: 10 20 30 
+    The sum of the array is: 60
+    The max value of the array is: 30
+    The array after deleting the max value is: 10 20 
+    Input the inserted position: Input the inserted value: Invalid position!
+    The array after reversing is: 20 10 
+*/
+
+/* Test 16: reverse, even length
+input
+    4
+    1 2 3 4
+    0
+    0
+output
+    Input n: Input n elements: The array is: 1 2 3 4 
+    The sum of the array is: 10
+    The max value of the array is: 4
+    The array after deleting the max value is: 1 2 3 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 1 2 3 
+    The array after reversing is: 3 2 1 0 
+*/
+
+/* Test 17: reverse, odd length
+input
+    5
+    1 2 3 4 5
+    0
+    0
+output
+    Input n: Input n elements: The array is: 1 2 3 4 5 
+    The sum of the array is: 15
+    The max value of the array is: 5
+    The array after deleting the max value is: 1 2 3 4 
+    Input the inserted position: Input the inserted value: The array after inserting is: 0 1 2 3 4 
+    The array after reversing is: 4 3 2 1 0 
+*/
+
+/* Test 18: reverse, one element
+input
+    1
+    7
+    0
+    4
+output
+    Input n: Input n elements: The array is: 7 
+    The sum of the array is: 7
+    The max value of the array is: 7
+    The array after deleting the max value is: 
+    Input the inserted position: Input the inserted value: The array after inserting is: 4 
+    The array after reversing is: 4 
+*/
