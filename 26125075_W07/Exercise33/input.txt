@@ -1,0 +1,8 @@
+CS160
+Introduction to Programming
+open
+50
+2
+23127001, 22/3/2008, Nguyen Van A
+23127002, 07/3/2008, Tran Thi B
+23127003, 18/11/2008, Le Van C

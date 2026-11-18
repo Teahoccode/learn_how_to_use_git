@@ -7,6 +7,6 @@ struct Data {
     char *Arr; // Mang char chua so line
 };
 
-void containAnswer(string filename, ifstream &in, Data &s);
+bool containAnswer(string filename, Data &s);
 
-void compareAnswer(string filename1, string filename2, Data &ans, Data &student);
+bool compareAnswer( Data &ans, Data &student, int &correct);

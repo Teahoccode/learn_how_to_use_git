@@ -1,0 +1,6 @@
+Course ID: CS160
+Course name: Introduction to Programming
+--- Students' Information --- 
+1. 23127001 - Nguyen Van A - 22/03/2008
+2. 23127002 - Tran Thi B - 07/03/2008
+3. 23127003 - Le Van C - 18/11/2008
