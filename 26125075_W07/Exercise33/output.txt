@@ -4,3 +4,12 @@ Course name: Introduction to Programming
 1. 23127001 - Nguyen Van A - 22/03/2008
 2. 23127002 - Tran Thi B - 07/03/2008
 3. 23127003 - Le Van C - 18/11/2008
+4. 23127004 - Pham Minh D - 19/11/2008
+5. 23127005 - Hoang Thu E - 19/11/2007
+6. 23127006 - Vo Quoc F - 01/11/2008
+7. 23127007 - Dang Ngoc G - 30/11/2008
+8. 23127008 - Bui Gia H - 19/05/2008
+9. 23127009 - Do Thanh I - 20/11/2008
+10. 23127010 - Ngo Bao K - 29/02/2008
+11. 23127011 - Ly Hai L - 31/12/2007
+12. 23127012 - Truong My M - 01/01/2008

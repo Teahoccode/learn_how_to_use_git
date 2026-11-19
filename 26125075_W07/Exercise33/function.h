@@ -4,6 +4,7 @@ using namespace std;
 #include<string>
 #include<fstream>
 #include<iomanip>
+#include<ctime>
 
 struct Date {
     int day;
@@ -39,14 +40,18 @@ bool inputStudent(ifstream &in, Student &s, Course &A);
 
 bool addStudent(Course &A, Student &S);
 
+bool removeStudent(Course &A, string &id);
+
 bool inputCourse(string filename, Course &A);
 
 bool inputStudent(string filename, Student &d, Course &A);
 
-void outputDate(ofstream &out, Date DOB);
+void outputDate(ostream &out, Date DOB);
 
-void outputStudent(ofstream &out, Course &A, int i);
+void outputStudent(ostream &out, Student &S);
 
 bool outputFile(string filename, Course &A);
+
+bool realTime(Date &Today);
 
 

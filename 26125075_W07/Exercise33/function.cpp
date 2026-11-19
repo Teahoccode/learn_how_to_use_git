@@ -53,13 +53,13 @@ bool addStudent(Course &A, Student &S)
     return true;
 }
 
-bool removeStudent(Course &A, Student &S)
+bool removeStudent(Course &A, string &id)
 {
 
     int pos = -1;
     for (int i = 0; i < A.num; i++)
     {
-        if (A.Arr[i].id == S.id)
+        if (A.Arr[i].id == id)
         {
             pos = i;
             break;
@@ -74,7 +74,7 @@ bool removeStudent(Course &A, Student &S)
     int index = 0;
     for (int i = 0; i < A.num; i++)
     {
-        if (A.Arr[i].id != S.id)
+        if (A.Arr[i].id != id)
         {
             temp[index++] = A.Arr[i];
         }
@@ -118,15 +118,16 @@ bool inputCourse(string filename, Course &A)
     return true;
 }
 
-void outputDate(ofstream &out, Date DOB)
+void outputDate(ostream &out, Date DOB)
 {
     out << setfill('0') << setw(2) << DOB.day << "/" << setw(2) << DOB.month << "/" << DOB.year << "\n";
 }
 
-void outputStudent(ofstream &out, Course &A, int i)
+void outputStudent(ostream &out, Student &s)
 {
-    out << i + 1 << ". " << A.Arr[i].id << " - " << A.Arr[i].name << " - ";
-    outputDate(out, A.Arr[i].DOB);
+    out << s.id << " - " << s.name << " - ";
+    outputDate(out, s.DOB);
+    return;
 }
 
 bool outputFile(string filename, Course &A)
@@ -142,9 +143,24 @@ bool outputFile(string filename, Course &A)
     out << "--- Students' Information --- \n";
     for (int i = 0; i < A.num; i++)
     {
-        outputStudent(out, A, i);
+        out << i + 1 << ". ";
+        outputStudent(out, A.Arr[i]);
     }
 
     out.close();
     return true;
 }
+
+bool realTime(Date &Today){
+    time_t now = std::time(nullptr);
+    tm* local_tm = std::localtime(&now);
+    Today.day = local_tm -> tm_mday;
+    Today.month = local_tm -> tm_mon +  1;
+    Today.year = local_tm -> tm_year +1900;
+    return true;
+
+}
+
+
+
+
