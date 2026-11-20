@@ -1,24 +1,27 @@
 #pragma once
 using namespace std;
-#include<iostream>
-#include<string>
-#include<fstream>
-#include<iomanip>
-#include<ctime>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <ctime>
 
-struct Date {
+struct Date
+{
     int day;
     int month;
     int year;
 };
 
-struct Student {
+struct Student
+{
     string id;
     string name;
     Date DOB;
 };
 
-struct Course {
+struct Course
+{
     string id;
     string name;
     Student *Arr;
@@ -27,7 +30,8 @@ struct Course {
     int minimum;
     int num;
 
-    Course (){
+    Course()
+    {
         num = 0;
     }
 };
@@ -54,4 +58,6 @@ bool outputFile(string filename, Course &A);
 
 bool realTime(Date &Today);
 
+bool enoughAge(Date &DOB);
 
+bool checkClasse(string &id, string& classes);

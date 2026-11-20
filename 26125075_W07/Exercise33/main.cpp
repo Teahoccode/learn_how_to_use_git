@@ -17,7 +17,7 @@ int main()
 {
     Course A;
     int choice;
-
+    ofstream out("ouput.txt");
     do
     {
         showMenu();
@@ -60,10 +60,7 @@ int main()
             string ID;
             cout << "Input student id: ";
             getline(cin, ID);
-            if (!removeStudent(A, ID)){
-                cout << "Invalid!";
-            }
-            else {
+            if (removeStudent(A, ID)){
                 cout << "Remove succesfully!";
             }
             break;
@@ -119,6 +116,52 @@ int main()
             }
             break;
 
+        }
+        case 7:
+        {
+            int index = 0;
+            for(int i = 0; i < A.num; i++){
+                if (enoughAge(A.Arr[i].DOB)){
+                    cout << index + 1 << ". ";
+                    outputStudent(cout, A.Arr[i]);
+                    index ++;
+                }
+            }
+            break;
+        }
+        case 8:
+        {
+            int index = 0;
+            if (!out){
+                cout << "Can't open the file!";
+            }
+            else {
+
+                out << "--- All student in K19 --- \n";
+                string classe = "K19";
+                for(int i = 0; i < A.num; i++){
+                    if (checkClasse(A.Arr[i].id, classe)){
+                        out << index + 1 << ". ";
+                        outputStudent(out, A.Arr[i]);
+                    }
+                    
+                }
+            }
+            break;
+
+        }
+        case 9:
+        {
+            string id;
+            getline(cin, id);
+            bool check = false;
+            for(int i = 0; i < A.num; i++){
+                if (A.Arr[i].id == id){
+                    outputStudent()
+
+
+                }
+            }
         }
 
         case 0:
