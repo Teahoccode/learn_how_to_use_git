@@ -161,6 +161,36 @@ bool realTime(Date &Today){
 
 }
 
+bool enoughAge(Date &DOB){
 
+    Date Today;
+    
+    time_t now = std::time(nullptr);
+    tm* local_tm = std::localtime(&now);
+    Today.day = local_tm -> tm_mday;
+    Today.month = local_tm -> tm_mon +  1;
+    Today.year = local_tm -> tm_year +1900;
 
+    if ((Today.year - DOB.year >= 18) && (Today.month >= DOB.month) && (Today.day >= DOB.day)){
+        return true;
+    }
+    return false;
 
+}
+
+bool checkClasse(string &id, string& classes){
+    if (id.substr(0,2) == classes.substr(1,2)) return true;
+    return false;
+}
+
+string firstName(string &Name){
+    int index = 0;
+    for(int i = Name.length()-1; i >=0; i--){
+        if (Name[i]){
+            index = i;
+            break;
+        }
+    }
+    string first = Name.substr(index, Name.length() - index);
+    return first;
+}
